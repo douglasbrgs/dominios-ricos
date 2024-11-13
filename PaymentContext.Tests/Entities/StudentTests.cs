@@ -16,6 +16,11 @@ namespace PaymentContext.Tests
 
             Student student = new Student(name, document, email);
             student.AddSubscription(subscription);
+
+            foreach (var not in name.Notifications)
+            {
+                Console.WriteLine(not.Message);
+            }
         }
     }
 }
