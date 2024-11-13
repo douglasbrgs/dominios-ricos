@@ -1,4 +1,5 @@
 using PaymentContext.Domain.Entities;
+using PaymentContext.Domain.ValueObjects;
 
 namespace PaymentContext.Tests
 {
@@ -9,7 +10,11 @@ namespace PaymentContext.Tests
         public void AdicionarAssinaturaTest()
         {
             Subscription subscription = new Subscription(null);
-            Student student = new Student("Douglas", "Borges", "1234567890", "douglas@email.com");
+            Name name = new Name("Douglas", "Borges");
+            Document document = new Document("1234567890", Domain.Enums.EDocumentType.CPF);
+            Email email = new Email("douglas@email.com");
+
+            Student student = new Student(name, document, email);
             student.AddSubscription(subscription);
         }
     }
