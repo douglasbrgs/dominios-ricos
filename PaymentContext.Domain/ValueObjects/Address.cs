@@ -5,7 +5,7 @@ namespace PaymentContext.Domain.ValueObjects
 {
     public class Address : ValueObject
     {
-        public Address(string street, string number, string neighborhood, string city, string state, string country, string zip)
+        public Address(string street, string number, string neighborhood, string city, string state, string country, string zipCode)
         {
             Street = street;
             Number = number;
@@ -13,7 +13,7 @@ namespace PaymentContext.Domain.ValueObjects
             City = city;
             State = state;
             Country = country;
-            Zip = zip;
+            ZipCode = zipCode;
 
             AddNotifications(new Contract()
                 .Requires()
@@ -27,6 +27,6 @@ namespace PaymentContext.Domain.ValueObjects
         public string City { get; private set; } = string.Empty;
         public string State { get; private set; } = string.Empty;
         public string Country { get; private set; } = string.Empty;
-        public string Zip { get; private set; } = string.Empty;
+        public string ZipCode { get; private set; } = string.Empty;
     }
 }
