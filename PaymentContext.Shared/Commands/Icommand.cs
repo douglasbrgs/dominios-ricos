@@ -2,5 +2,6 @@
 {
     public interface Icommand
     {
+        void Validate();
     }
 }
