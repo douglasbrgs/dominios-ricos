@@ -1,13 +1,9 @@
 ﻿using PaymentContext.Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PaymentContext.Shared.Commands;
 
 namespace PaymentContext.Domain.Commands
 {
-    internal class CreateCreditCardSubscriptionCommand
+    internal class CreateCreditCardSubscriptionCommand : ICommand
     {
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
@@ -35,5 +31,10 @@ namespace PaymentContext.Domain.Commands
         public string State { get; set; } = string.Empty;
         public string Country { get; set; } = string.Empty;
         public string ZipCode { get; set; } = string.Empty;
+
+        public void Validate()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
